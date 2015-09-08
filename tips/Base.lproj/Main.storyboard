@@ -157,28 +157,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                             </textField>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="RXD-51-B9Y">
-                                <rect key="frame" x="239" y="156" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="notHappyTipValueChanged:" destination="GD7-Yi-xgk" eventType="valueChanged" id="HRo-6S-Kia"/>
-                                    <action selector="onDefaultChanged:" destination="GD7-Yi-xgk" eventType="valueChanged" id="fzf-bl-oOl"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" id="JiY-l8-8lK">
-                                <rect key="frame" x="239" y="209" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="satisfieldTipValueChanged:" destination="GD7-Yi-xgk" eventType="valueChanged" id="Hoq-br-eT8"/>
-                                </connections>
-                            </switch>
-                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" id="AVo-S4-NCV">
-                                <rect key="frame" x="239" y="270" width="51" height="31"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="veryHappyValueChanged:" destination="GD7-Yi-xgk" eventType="valueChanged" id="333-r9-JZM"/>
-                                </connections>
-                            </switch>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Mark the tip you want as default" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="eiU-Y6-J83">
                                 <rect key="frame" x="32" y="87" width="247" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -217,6 +195,36 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="7TC-FT-mwu">
+                                <rect key="frame" x="211" y="159" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Make Default">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onMakeNotHappyDefault:" destination="GD7-Yi-xgk" eventType="touchDown" id="KzL-Mj-ODB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="iuU-3n-RYq">
+                                <rect key="frame" x="211" y="215" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Make Default">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onMakeSatisfiedDefault:" destination="GD7-Yi-xgk" eventType="touchUpInside" id="T9P-i1-1aP"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="3A6-sd-JaK">
+                                <rect key="frame" x="211" y="275" width="91" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Make Default">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onMakeVeryHappyDefault:" destination="GD7-Yi-xgk" eventType="touchDown" id="S3V-zS-ZeA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -225,10 +233,8 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="notHappyDefaultSwitch" destination="RXD-51-B9Y" id="Th7-QE-8uW"/>
                         <outlet property="notHappyTip" destination="SHo-GH-I3K" id="6lw-OJ-N6K"/>
                         <outlet property="satisfieldTip" destination="CZo-VK-cfY" id="767-GZ-Qgk"/>
-                        <outlet property="veryHappyDefaultSwitch" destination="AVo-S4-NCV" id="Ljv-x4-FsY"/>
                         <outlet property="veryHappyTip" destination="f96-rm-Jk1" id="v6M-YU-aQw"/>
                     </connections>
                 </viewController>

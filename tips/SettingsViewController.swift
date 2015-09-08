@@ -16,11 +16,6 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var veryHappyTip: UITextField!
     
-    @IBOutlet weak var notHappyDefaultSwitch: UISwitch!
-    
-    @IBOutlet weak var satisfieldDefaultSwitch: UISwitch!
-    
-    @IBOutlet weak var veryHappyDefaultSwitch: UISwitch!
     
     var tipPercentages = [0.15, 0.18, 0.2]
     
@@ -51,42 +46,22 @@ class SettingsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    @IBAction func notHappyTipValueChanged(sender: AnyObject) {
-        if notHappyDefaultSwitch.on {
-            defaultTipIndex = 0
-            //satisfieldDefaultSwitch.setOn(false, animated: true)
-            //veryHappyDefaultSwitch.setOn(false, animated: true)
-        } else {
-            defaultTipIndex = 1
-            //satisfieldDefaultSwitch.setOn(true, animated: true)
-        }
-    }
-    
-    @IBAction func satisfieldTipValueChanged(sender: AnyObject) {
-        if satisfieldDefaultSwitch.on {
-            defaultTipIndex = 0
-            //notHappyDefaultSwitch.setOn(false, animated: true)
-            //veryHappyDefaultSwitch.setOn(false, animated: true)
-        } else {
-            defaultTipIndex = 2
-            //veryHappyDefaultSwitch.setOn(true, animated: true)
-        }
-    }
-    
-    
-    @IBAction func veryHappyValueChanged(sender: AnyObject) {
-        if veryHappyDefaultSwitch.on {
-            defaultTipIndex = 0
-            //satisfieldDefaultSwitch.setOn(false, animated: true)
-            //notHappyDefaultSwitch.setOn(false, animated: true)
-        } else {
-            defaultTipIndex = 1
-            //satisfieldDefaultSwitch.setOn(true, animated: true)
-        }
-    }
+
     
     @IBAction func onTap(sender: AnyObject) {
         view.endEditing(true)
+    }
+    
+    @IBAction func onMakeNotHappyDefault(sender: AnyObject) {
+        defaultTipIndex = 0
+    }
+    
+    @IBAction func onMakeSatisfiedDefault(sender: AnyObject) {
+        defaultTipIndex = 1
+    }
+    
+    @IBAction func onMakeVeryHappyDefault(sender: AnyObject) {
+        defaultTipIndex = 2
     }
     
     @IBAction func onTouchDown(sender: AnyObject) {
