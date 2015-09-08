@@ -16,6 +16,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var tipControl: UISegmentedControl!
     
     var tipPercentages = [0.15, 0.18, 0.2]
+    var defaultTipIndex = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,13 +29,27 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        var defaults = NSUserDefaults.standardUserDefaults()
+        tipPercentages = defaults.objectForKey("tipPercentages") as Array
+        defaultTipIndex = defaults.integerForKey("defaultTipIndex")
+        tipControl.selectedSegmentIndex = defaultTipIndex
+        
+        recalculate()
+    }
 
     @IBAction func onEditingChanged(sender: AnyObject) {
+        recalculate()
+    }
+    
+    func recalculate() {
         var billAmount = billField.text._bridgeToObjectiveC().doubleValue
         var tipPercentage = tipPercentages[tipControl.selectedSegmentIndex]
         var tip = tipPercentage * billAmount
         var total = billAmount + tip
-
+        
         tipLabel.text = String(format: "$%.2f", tip)
         totalLabel.text = String(format: "$%.2f", total)
     }
