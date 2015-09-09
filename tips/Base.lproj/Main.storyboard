@@ -233,8 +233,11 @@
                         </connections>
                     </view>
                     <connections>
+                        <outlet property="notHappyDefaultButton" destination="7TC-FT-mwu" id="z8V-sE-Wed"/>
                         <outlet property="notHappyTip" destination="SHo-GH-I3K" id="6lw-OJ-N6K"/>
+                        <outlet property="satisfieldDefaultButton" destination="iuU-3n-RYq" id="E6L-aR-dib"/>
                         <outlet property="satisfieldTip" destination="CZo-VK-cfY" id="767-GZ-Qgk"/>
+                        <outlet property="veryHappyDefaultButton" destination="3A6-sd-JaK" id="G3h-pD-RSA"/>
                         <outlet property="veryHappyTip" destination="f96-rm-Jk1" id="v6M-YU-aQw"/>
                     </connections>
                 </viewController>

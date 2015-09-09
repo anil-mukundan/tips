@@ -16,6 +16,11 @@ class SettingsViewController: UIViewController {
     
     @IBOutlet weak var veryHappyTip: UITextField!
     
+    @IBOutlet weak var notHappyDefaultButton: UIButton!
+    
+    @IBOutlet weak var satisfieldDefaultButton: UIButton!
+    
+    @IBOutlet weak var veryHappyDefaultButton: UIButton!
     
     var tipPercentages = [0.15, 0.18, 0.2]
     
@@ -54,14 +59,23 @@ class SettingsViewController: UIViewController {
     
     @IBAction func onMakeNotHappyDefault(sender: AnyObject) {
         defaultTipIndex = 0
+        notHappyDefaultButton.setTitle("Default", forState: UIControlState.Normal)
+        satisfieldDefaultButton.setTitle("Make Default", forState: UIControlState.Normal)
+        veryHappyDefaultButton.setTitle("Make Default", forState: UIControlState.Normal)
     }
     
     @IBAction func onMakeSatisfiedDefault(sender: AnyObject) {
         defaultTipIndex = 1
+        notHappyDefaultButton.setTitle("Make Default", forState: UIControlState.Normal)
+        satisfieldDefaultButton.setTitle("Default", forState: UIControlState.Normal)
+        veryHappyDefaultButton.setTitle("Make Default", forState: UIControlState.Normal)
     }
     
     @IBAction func onMakeVeryHappyDefault(sender: AnyObject) {
         defaultTipIndex = 2
+        notHappyDefaultButton.setTitle("Make Default", forState: UIControlState.Normal)
+        satisfieldDefaultButton.setTitle("Make Default", forState: UIControlState.Normal)
+        veryHappyDefaultButton.setTitle("Default", forState: UIControlState.Normal)
     }
     
     @IBAction func onTouchDown(sender: AnyObject) {
